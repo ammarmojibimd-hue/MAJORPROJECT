@@ -3,6 +3,7 @@ body{
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #eef7ef;
 }
 
 .container{
@@ -10,8 +11,78 @@ body{
 }
 
 .navbar{
-    height: 5rem;
-    background-color: white;
+    min-height: 5rem;
+    height: auto;
+}
+.navbar-custom{
+    background-color: #fff0f0;
+}
+.navbar-custom .container-fluid{
+    padding-left: clamp(1rem, 4vw, 3rem);
+    padding-right: clamp(1rem, 4vw, 3rem);
+}
+.navbar-search{
+    width: min(100%, 25rem);
+}
+.input-search{
+    min-width: 0;
+    border-radius: 25px;
+    font-size: 0.9rem;
+}
+.btn-search{
+    flex: 0 0 auto;
+    background-color: #fe424d !important;
+    color: #fff !important;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+}
+.btn-search:hover{
+    background-color: #e93642 !important;
+    color: #fff !important;
+}
+.btn-search i{
+    margin-right: 0.5rem;
+}
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.9rem;
+    margin: 0.75rem 0 1.5rem;
+}
+.filter{
+    min-width: 3.5rem;
+    text-align: center;
+    margin-top: 0.75rem;
+    opacity: 0.7;
+}
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.filter p{
+    margin: 0.25rem 0 0;
+    font-size: 0.8rem;
+}
+.tax-info{
+    display: none;
+}
+.tax-toggle{
+    border: 1px solid #6b746d;
+    border-radius: 1rem;
+    min-height: 3rem;
+    padding: 0.65rem 0.9rem;
+    margin: 0.75rem 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+.listing-card-link{
+    display: block;
+    height: 100%;
+}
+.listing-index-img{
+    aspect-ratio: 4 / 3;
+    height: auto;
 }
 .fa-compass{
     color: #fe424d;
@@ -24,28 +95,80 @@ body{
     text-decoration: none !important;
     color: #222222 !important;
 }
-.f-info-links a:hover{
+.site-footer{
+    margin-top: 3rem;
+    padding: 2.5rem 0 1rem;
+    background: #e2f0e5;
+    border-top: 1px solid #cbded0;
+    color: #253b2c;
+}
+.footer-main{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+.footer-brand p{
+    max-width: 22rem;
+    margin: 0.75rem 0 0;
+    color: #52685a;
+}
+.footer-logo{
+    color: #253b2c !important;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+.footer-logo i{
+    color: #fe424d;
+    margin-right: 0.35rem;
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+}
+.footer-links h2{
+    margin: 0 0 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.footer-links a{
+    color: #52685a !important;
+    font-size: 0.92rem;
+}
+.footer-links a:hover{
+    color: #253b2c !important;
     text-decoration: underline !important;
 }
-.f-info-links{
-    width: 100%;
-}
-.f-info-socials{
-    width: 100%;
-    font-size: 1.5rem;
-}
-.f-info{
-    text-align: center;
-    height: 8rem;
-    background-color: #ebebeb;
+.footer-bottom{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #cbded0;
+    color: #52685a;
+    font-size: 0.85rem;
+}
+.footer-bottom .fa-heart{
+    color: #fe424d;
+}
+@media (max-width: 576px){
+    .footer-main{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    .footer-brand{
+        grid-column: 1 / -1;
+    }
+    .footer-bottom{
+        flex-direction: column;
+    }
 }
 .listing-card{
   border: none !important;
   margin-bottom: 2rem;
+  background-color: transparent !important;
 }
 .card-img-top{
     border-radius: 1rem !important;
@@ -73,10 +196,133 @@ body{
     background-color: #fe424d !important;
     border: none !important;
 }
+.edit-card{
+    background: rgba(210, 238, 250, 0.72) !important;
+    border: 1px solid rgba(235, 249, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    margin: 2rem 0 2rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.edit-card .card-body{
+    padding: 1.5rem !important;
+}
+.edit-current-image{
+    width: 100%;
+    max-width: 18rem;
+    max-height: 12rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-top: 0.35rem;
+}
 .show-img{
-    height: 30vh;
+    display: block;
+    width: 100%;
+    max-height: 26rem;
+    object-fit: cover;
+    border-radius: 0.85rem;
+}
+.listing-details-page{
+    margin-top: 2.5rem;
+}
+.show-section-card{
+    border-radius: 1rem !important;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(31, 63, 82, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.show-section-card > .card-body{
+    padding: 1.5rem !important;
+}
+.listing-details-card{
+    background: #fff0f0 !important;
+    border: 1px solid #f2d1d1 !important;
+}
+.add-listing-card,
+.auth-card{
+    background: #fff0f0 !important;
+    border: 1px solid #f2d1d1 !important;
+}
+.map-card{
+    background: #fff4f2 !important;
+    border: 1px solid #f1d8d3 !important;
+}
+.review-form-card{
+    background: #fcebed !important;
+    border: 1px solid #efcfd4 !important;
+}
+.reviews-card{
+    background: #fff1eF !important;
+    border: 1px solid #f0d5cf !important;
+}
+.review-item-card{
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(235, 205, 205, 0.9) !important;
+    border-radius: 0.8rem !important;
 }
 #map {
      height: 350px;
-     width: 80vh;
+     width: 100%;
+     border-radius: 0.8rem;
+}
+@media (max-width: 767.98px){
+    .navbar-custom .navbar-collapse{
+        padding: 0.5rem 0 1rem;
+    }
+    .navbar-search{
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    .navbar-custom .navbar-nav + .navbar-nav{
+        margin-top: 0.25rem;
+    }
+    .navbar-custom .nav-link{
+        padding: 0.55rem 0;
+    }
+    .filters{
+        gap: 0.1rem 0.65rem;
+    }
+    .tax-toggle{
+        margin-left: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px){
+    .navbar-search{
+        width: 16rem;
+    }
+    .btn-search{
+        padding: 0.5rem 0.75rem;
+    }
+    .navbar-custom .container-fluid{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media (max-width: 575.98px){
+    .container{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .show-section-card > .card-body,
+    .edit-card .card-body{
+        padding: 1rem !important;
+    }
+    .listing-details-page{
+        margin-top: 1.25rem;
+    }
+    .show-img{
+        max-height: 19rem;
+    }
+    #map{
+        height: 260px;
+    }
+    .footer-main{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+    .footer-bottom{
+        font-size: 0.8rem;
+    }
 }

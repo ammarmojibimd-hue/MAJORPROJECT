@@ -1,8 +1,10 @@
 <% layout("layouts/boilerplate") %>
-   <div class="row">
-    <div class="col-8 offset-2">
-    <h3>Edit your Listing</h3>
-    <form method="POST" action="/listings/<%= listing._id%>?_method=PUT" enctype="multipart/form-data" class="needs-validation ">
+   <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+    <div class="card edit-card">
+    <div class="card-body">
+    <h3 class="card-title mb-4">Edit your Listing</h3>
+    <form method="POST" action="/listings/<%= listing._id%>?_method=PUT" enctype="multipart/form-data" class="needs-validation">
         <div class="mb-3">
     <label for="title" class="form-label">Title</label>
 <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required>
@@ -15,8 +17,8 @@
         </div>
 
         <div class="mb-3">
-            original listing image:- <br/>
-         <img src="<%= originalImageUrl %>"/>
+            <label class="form-label">Current listing image</label><br/>
+         <img class="edit-current-image" src="<%= originalImageUrl %>" alt="Current listing image"/>
 </div>
 
 <div class="mb-3">
@@ -42,6 +44,7 @@
 </div>
     <button type="submit" class="btn btn-dark edit-btn">Edit</button>
     </form>
+    </div>
     </div>
    </div>
   
